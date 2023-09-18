@@ -75,6 +75,8 @@ class _FormPasswordGeneratorState extends State<FormPasswordGenerator> {
 
   void showCopyDialog() {
     const snackBar = SnackBar(
+      showCloseIcon: true,
+      closeIconColor: Colors.white,
       backgroundColor: Color.fromARGB(255, 145, 123, 255),
       content: Text('Contraseña copiada'),
       duration: Duration(seconds: 2),

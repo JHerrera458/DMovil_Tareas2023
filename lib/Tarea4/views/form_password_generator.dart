@@ -159,21 +159,28 @@ class _FormPasswordGeneratorState extends State<FormPasswordGenerator> {
   }
 
   createSlider(PasswordProvider passwordProvider) {
+    Color color1 = const Color.fromARGB(255, 145, 123, 255);
+    Color color2 = const Color.fromARGB(255, 209, 200, 255);
     return Column(
       children: [
         Text("Longitud de la contraseña: ${passwordProvider.length}"),
         Slider(
-            min: 1,
-            max: 50,
-            divisions: 49,
-            value: passwordProvider.length,
-            onChanged: (double newValue) {
-              setState(() {
-                passwordProvider.length = newValue.roundToDouble();
-                passwordProvider.generatedPassword =
-                    passwordProvider.generateRandomPassword();
-              });
-            }),
+          thumbColor: color1,
+          secondaryActiveColor: color2,
+          activeColor: color1,
+          inactiveColor: color2,
+          min: 1,
+          max: 50,
+          divisions: 49,
+          value: passwordProvider.length,
+          onChanged: (double newValue) {
+            setState(() {
+              passwordProvider.length = newValue.roundToDouble();
+              passwordProvider.generatedPassword =
+                  passwordProvider.generateRandomPassword();
+            });
+          },
+        ),
       ],
     );
   }

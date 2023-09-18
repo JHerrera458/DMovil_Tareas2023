@@ -44,7 +44,9 @@ class _FormPasswordGeneratorState extends State<FormPasswordGenerator> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(passwordProvider.generatedPassword),
+          Expanded(
+            child: Text(passwordProvider.generatedPassword),
+          ),
           Row(
             children: [
               // Icono para generar nueva contraseña.
